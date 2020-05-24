@@ -1,0 +1,69 @@
+﻿@model Letting_Portal.Models.ContactViewModel
+<h2>@ViewBag.Message </h2>
+
+<hr />
+
+<div class="col-md-7">
+    <h3 style="color: lawngreen;">@ViewBag.Success</h3>
+    <br />
+    @ViewBag.Title
+    @*@Html.DisplayFor(model => model.Title)*@
+    <p>You are enquiring about ******</p>
+    <p>Please fill out the form below and we will get back to you.</p>
+
+    <div>
+        @using (Html.BeginForm())
+        {
+            if (TempData["Error"] == null)
+            {
+                <div>
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                    <br />
+
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                </div>
+                <br />
+                <div class="form-group">
+
+                    @Html.LabelFor(model => model.EmailFrom, htmlAttributes: new { @class = "control-label" })
+                    <br />
+                    @Html.EditorFor(model => model.EmailFrom, new { htmlAttributes = new { @class = "form-control", style = "" } })
+                    @Html.ValidationMessageFor(model => model.EmailFrom, "", new { @class = "text-danger" })
+
+                </div>
+                <br />
+
+                <div class="form-group">
+
+                    @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label" })
+
+                    <br />
+                    @Html.TextAreaFor(model => model.Message, htmlAttributes: new { @class = "form-control", style = "height:10em;" })
+                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+
+                </div>
+                <br />
+                <div>
+                    <div class="form-group">
+                        <div>
+                            <input type="submit" value="Send" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+
+            }
+        }
+    </div>
+    <div>
+        @if (TempData["Error"] != null)
+            {
+            <div>@TempData["Error"]</div>
+        }
+    </div>
+</div>
+
+
+
+

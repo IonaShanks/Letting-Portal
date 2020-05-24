@@ -79,6 +79,17 @@ namespace Letting_Portal.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required, Display(Name = "First Name")]
+        public string Fname { get; set; }
+
+        [Required, Display(Name = "Last Name")]
+        public string Lname { get; set; }
+
+        public string Address { get; set; }
+
+        [Required, Phone, Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
     }
 
     public class ResetPasswordViewModel

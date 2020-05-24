@@ -192,12 +192,41 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005241215284_InitialCreate.cs" />
+    <Compile Include="Migrations\202005241215284_InitialCreate.Designer.cs">
+      <DependentUpon>202005241215284_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005241434183_Initial.cs" />
+    <Compile Include="Migrations\202005241434183_Initial.Designer.cs">
+      <DependentUpon>202005241434183_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005241435410_2.cs" />
+    <Compile Include="Migrations\202005241435410_2.Designer.cs">
+      <DependentUpon>202005241435410_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005241450061_3.cs" />
+    <Compile Include="Migrations\202005241450061_3.Designer.cs">
+      <DependentUpon>202005241450061_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005241507471_4.cs" />
+    <Compile Include="Migrations\202005241507471_4.Designer.cs">
+      <DependentUpon>202005241507471_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005241511441_5.cs" />
+    <Compile Include="Migrations\202005241511441_5.Designer.cs">
+      <DependentUpon>202005241511441_5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ContactViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RentalContext.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -258,6 +287,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Rentals\Details.cshtml" />
+    <Content Include="Views\Rentals\Index.cshtml" />
+    <Content Include="Views\Rentals\Enquire.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,6 +306,26 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202005241215284_InitialCreate.resx">
+      <DependentUpon>202005241215284_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005241434183_Initial.resx">
+      <DependentUpon>202005241434183_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005241435410_2.resx">
+      <DependentUpon>202005241435410_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005241450061_3.resx">
+      <DependentUpon>202005241450061_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005241507471_4.resx">
+      <DependentUpon>202005241507471_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005241511441_5.resx">
+      <DependentUpon>202005241511441_5.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

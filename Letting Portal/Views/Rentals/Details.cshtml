@@ -1,0 +1,163 @@
+﻿@model Letting_Portal.Models.Rental
+@using Letting_Portal.Controllers;
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rental</h4>
+    <hr />
+
+    <h3>@Html.ActionLink("Enquire", "Enquire", new { id = Model.RentalID })</h3>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Town)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Town)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bedroom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bedroom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bathroom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bathroom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricePerMonth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricePerMonth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shower)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shower)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecureEntry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecureEntry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Smoking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Smoking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnSuite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnSuite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dishwasher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dishwasher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alarm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alarm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Furnished)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Furnished)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
