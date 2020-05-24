@@ -112,8 +112,6 @@ namespace Letting_Portal.Controllers
             SortList.Add("Town (Z-A)");
             SortList.Add("Price per Month (H-L)");
             SortList.Add("Price per Month (L-H)");
-            SortList.Add("Bedrooms (H-L)");
-            SortList.Add("Bedrooms (L-H)");
             return SortList;
         }
 
