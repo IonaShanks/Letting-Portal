@@ -72,7 +72,7 @@ namespace Letting_Portal.Controllers
                 }
                 
             }
-            bedResult = "Bedrooms: " + searchBed + " and above. ";
+            bedResult = "Bedrooms: " + searchBed + " or more. ";
             return rentList;
         }
 
