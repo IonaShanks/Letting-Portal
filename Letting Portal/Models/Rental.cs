@@ -36,10 +36,10 @@ namespace Letting_Portal.Models
             [Required, Display(Name = "Email")]
             public String Email { get; set; }
 
-            [Required, Display(Name = "Number of Bedrooms")]
+            [Required, Display(Name = "Bedrooms")]
             public int Bedroom { get; set; }
 
-            [Required, Range(1, Int32.MaxValue, ErrorMessage = "{0} must be greater than 0."), Display(Name = "Number of Bathrooms")]
+            [Required, Range(1, Int32.MaxValue, ErrorMessage = "{0} must be greater than 0."), Display(Name = "Bathrooms")]
             public int Bathroom { get; set; }
 
             [DisplayFormat(DataFormatString = "{0:C}"), Required, Display(Name = "Price per Month"), Range(0.01, Int32.MaxValue, ErrorMessage = "{0} must be greater than 0.")]

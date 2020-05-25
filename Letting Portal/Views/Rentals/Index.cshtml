@@ -6,125 +6,113 @@
 
 
 
-<a name="top"></a>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Find Flats and Houses to Rent</h2>
+<h2>Find Properties to Rent</h2>
 
 @using (Html.BeginForm("Index", "Rentals", FormMethod.Get))
 
 {
     <hr />
-    <h3> Search by: </h3>
+    <h3> Search: </h3>
+
     <div class="row">
-
         <div class="col-md-12">
-
-            <div class="form-group, col-md-4">
-                <label class="control-label" for="inputDefault">Region:</label>
-                @Html.DropDownList("region", (SelectList)ViewBag.region, "All", new { @class = "form-control" })
-            </div>
-
-            <div class="form-group, col-md-4">
+            <div class="form-group, col-md-12">
                 <label class="control-label" for="inputDefault">Town: </label>
-                @Html.TextBox("searchTown", "", new { @class = "form-control" })
+                @Html.TextBox("searchTown", "", new { @class = "form-control", @type = "text", @placeholder = "Search", @style = "max-width: 94%;" })
             </div>
-
-            <div class="form-group, col-md-4">
-                <label class="control-label" for="inputDefault">Minimum Bedrooms:</label>
-                @Html.DropDownList("searchBed", (SelectList)ViewBag.bed, "All", new { @class = "form-control" })
             </div>
+        
 
-            <div class="form-group, col-md-4">
-                <br />
-                <label class="control-label" for="inputDefault">Sort By:</label>
-                @Html.DropDownList("sort", (SelectList)ViewBag.sort, "All", new { @class = "form-control" })
-            </div>
+        
 
-            <div class="col-md-12" style="color: red; margin-top: 1em;">
-                @ViewBag.Invalid
-            </div>
+            <div class="col-md-12">
+                <div class="form-group, col-md-4">
+                    <label class="control-label" for="inputDefault">Region:</label>
+                    @Html.DropDownList("region", (SelectList)ViewBag.region, "All", new { @class = "form-control" })
+                </div>
 
-            <div class="form-group, col-md-4">
-                <br />
+                <div class="form-group, col-md-4">
+                    <label class="control-label" for="inputDefault">Minimum Bedrooms:</label>
+                    @Html.DropDownList("searchBed", (SelectList)ViewBag.bed, "All", new { @class = "form-control" })
+                </div>
 
-                <button class="btn btn-primary" type="submit">Search</button>
-                <button class="btn btn-default" onclick="location.href='@Url.Action("Index")';return false;">Clear</button>
+                <div class="form-group, col-md-4">
+                    <label class="control-label" for="inputDefault">Sort By:</label>
+                    @Html.DropDownList("sort", (SelectList)ViewBag.sort, "All", new { @class = "form-control" })
+                </div>
+
+                <div class="col-md-12" style="color: red; margin-top: 1em;">
+                    @ViewBag.Invalid
+                </div>
+
+                <div class="form-group, col-md-4">
+                    <br />
+
+                    <button class="btn btn-primary" type="submit">Search</button>
+                    <button class="btn btn-default" onclick="location.href='@Url.Action("Index")';return false;">Clear</button>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <hr />
+        <hr />
         @ViewBag.Result
         <hr />
 
-}
+        }
 
 
-@foreach (var item in Model)
-{
-    <div class="col-md-6">
-
-        <h3>@Html.ActionLink(RentalsController.TitleCase(item.Title), "Details", new { id = item.RentalID })</h3>
 
 
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Region)
-            </dt>
+<div class="card-group">
+    @foreach (var item in Model)
+            {
+        <div class="col-lg-4 mb-4">
+            <div class="card-body">
+                <h4 class="card-header"> @Html.ActionLink(RentalsController.TitleCase(item.Title), "Details", new { id = item.RentalID })</h4>
 
-            <dd>
-                @Html.DisplayFor(model => item.Region)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Address)
-            </dt>
+                <dl class="card-text">
 
-            <dd>
-                @Html.DisplayFor(model => item.Address)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Postcode)
-            </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PricePerMonth)
+                    </dt>
 
-            <dd>
-                @Html.DisplayFor(model => item.Postcode)
-            </dd>
+                    <dd>
+                        @Html.DisplayFor(model => item.PricePerMonth)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.PricePerMonth)
-            </dt>
+                    <dd>
+                        @Html.DisplayFor(model => item.Address)
+                    </dd>
+                    <dd>
+                        @Html.DisplayFor(model => item.Town)
+                    </dd>
+                    <dd>
+                        @Html.DisplayFor(model => item.Region)
+                    </dd>
+                    <dd>
+                        @Html.DisplayFor(model => item.Postcode)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    }
 
-            <dd>
-                @Html.DisplayFor(model => item.PricePerMonth)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Bathroom)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => item.Bathroom)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Bedroom)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => item.Bedroom)
-            </dd>
-        </dl>
-    </div>
-                        }
-
-<div style="clear: both;">
-    <a href="#top">Back to top</a>
 </div>
+
+
+
+        <div style="clear: both;">
+            <a href="#top">Back to top</a>
+        </div>
 
 
 

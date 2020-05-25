@@ -204,17 +204,14 @@ namespace Letting_Portal.Controllers
         [HttpGet]
         public ActionResult Enquire(string id)
         {
-            var qryTitle = db.Rental.Where(f => f.RentalID == id);
-            var title = qryTitle.Select(f => f.Title);
-            ViewBag.Message = "Enquire about Rental";
-            ViewBag.Title = title;
+            ViewBag.Message = "Enquire about a property";
             return View();
         }
 
         [HttpPost]
         public ActionResult Enquire(ContactViewModel vm, string id)
         {
-            ViewBag.Message = "Enquire about Rental";
+            ViewBag.Message = "Enquire about a property";
             if (ModelState.IsValid)
             {
                 try

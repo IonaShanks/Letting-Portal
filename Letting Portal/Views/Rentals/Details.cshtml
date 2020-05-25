@@ -4,160 +4,130 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div>
-    <h4>Rental</h4>
+
+<div class="row">
+    <h3>@Html.DisplayFor(model => model.Title) <span style = "float:right; margin-right:2em;">@Html.ActionLink("Enquire about this property", "Enquire", new { id = Model.RentalID }) </span>
+    </h3>
     <hr />
+    <div class="row">
+    <div class="col-md-4">
+        <img src="https://www.thefulhamstudy.co.uk/wp-content/uploads/2018/10/Awaiting-Image.jpg" alt="Awaiting Image" style="width:100%;height:100%;" />
+    </div>
 
-    <h3>@Html.ActionLink("Enquire", "Enquire", new { id = Model.RentalID })</h3>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
+    <div class="col-md-4">
+        <h4 class="card-header">@Html.DisplayNameFor(model => model.Address)</h4>
+        <address>
             @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Town)
-        </dt>
-
-        <dd>
+            <br />
             @Html.DisplayFor(model => model.Town)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Postcode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Postcode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Region)
-        </dt>
-
-        <dd>
+            <br />
             @Html.DisplayFor(model => model.Region)
-        </dd>
+            <br />
+            @Html.DisplayFor(model => model.Postcode)
+        </address>
+        <br />
+        <br />
+        <h4> Contact Landlord:</h4>
+        <p>
+            Tel: @Html.DisplayFor(model => model.PhoneNumber)
+            <br />
+            @Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)
+        </p>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+    <div class="col-md-4">
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+        <h4>Price: @Html.DisplayFor(model => model.PricePerMonth) PCM</h4>
+        <br />
+        <br />
+        <i class="fa fa-bed fa-4x"> @Html.DisplayFor(model => model.Bedroom)</i> 
+        <br />
+        <br />
+        <i class="fa fa-bath fa-4x"> @Html.DisplayFor(model => model.Bathroom)</i> 
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Bedroom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Bedroom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Bathroom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Bathroom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PricePerMonth)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PricePerMonth)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Shower)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Shower)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SecureEntry)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SecureEntry)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pets)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pets)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Smoking)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Smoking)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EnSuite)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EnSuite)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Dishwasher)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dishwasher)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Alarm)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Alarm)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Furnished)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Furnished)
-        </dd>
-
-    </dl>
 </div>
+
+    <hr />   
+    <div class="col-md-8">
+        <h4>About the Property</h4>
+        @Html.DisplayFor(model => model.Description)
+    </div>
+    <div class="col-md-4">
+        <h4 style="float: right;">Features</h4>
+        <br /><br />
+        <dl class="dl-horizontal" style="float: right;">
+            <dt>
+                @Html.DisplayNameFor(model => model.Shower)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Shower)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SecureEntry)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SecureEntry)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Pets)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Pets)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Smoking)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Smoking)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EnSuite)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EnSuite)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Dishwasher)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Dishwasher)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Alarm)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Alarm)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Furnished)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Furnished)
+            </dd>
+            </dl>
+</div>
+    </div>  
+<hr/>
+
 <p>
     @Html.ActionLink("Back to List", "Index")
 </p>
